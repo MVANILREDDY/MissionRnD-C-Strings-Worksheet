@@ -33,7 +33,7 @@ char ** commonWords(char *str1, char *str2)
 
 char** finding_similar(char*a, char *b)
 {
-	int i = 0, j = 0, k = 0, l, count = 0, q, iterate = 0, x, index = 0, check = 0, loop = 0;
+	int i = 0, j = 0, k = 0, count = 0, q, iterate = 0, index = 0, check = 0, loop = 0;
 	char **d, **m;
 	int *arr;
 	arr = (int*)calloc(1, sizeof(int));
@@ -72,7 +72,7 @@ char** finding_similar(char*a, char *b)
 			if (a[k + 1] == '\0')
 			{
 				d[i][j] = a[k];
-				if (a[k-1]== 32&&i==0)
+				if (a[k]== 32&&i==0)
 				{
 					return NULL;
 				}
@@ -80,7 +80,7 @@ char** finding_similar(char*a, char *b)
 				d[i][j] = '\0';
 
 			}
-			while (b[iterate] != '\0')
+			while (b[iterate] != '\0')//used to check similar word in str2 after parsing a word from str1
 			{
 				count = 1;
 				for (q = 0; q<j; q++)
