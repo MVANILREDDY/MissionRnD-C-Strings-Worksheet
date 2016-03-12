@@ -19,7 +19,7 @@ void str_words_in_rev(char *input, int len)
 	{
 		if ((input[i] == 32 && input[i - 1] != 32) || input[i] == '\0')
 		{
-			word_reverse(input, low, high);
+			word_reverse(input, low, high);//if conditions are used to know starting and ending index of words
 			low = -1;
 		}
 		else if (input[i] == 32 && input[i + 1] == 32)
