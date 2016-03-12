@@ -20,6 +20,50 @@ NOTES: Don't create new string.
 #include <stdio.h>
 
 
-void number_to_str(float number, char *str,int afterdecimal){
+void number_to_str(float number, char *str,int afterdecimal)
 	
+{
+	int k, i = 0, l = 1, m = 0, x, loop;
+	x = afterdecimal;
+	if (afterdecimal == 0)
+	{
+		x = -1;
+	}
+	if (number<0)
+	{
+		str[0] = '-';
+		i++;
+		m++;
+		number = number*-1;
+	}
+	k = number;
+	while (k)
+	{
+		i++;
+		k = k / 10;
+	}
+	{
+		while (afterdecimal>0)
+		{
+			k = number * 10;
+			number = number * 10;
+			l++;
+			afterdecimal--;
+		}
+	}
+	k = number;
+	for (loop = i + x; loop >= m; loop--)
+	{
+		if (loop == i)
+		{
+			str[loop] = '.';
+		}
+		else
+		{
+
+			str[loop] = k % 10 + '0';
+			k = k / 10;
+		}
+	}
 }
+
