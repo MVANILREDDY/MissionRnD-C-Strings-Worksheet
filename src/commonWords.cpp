@@ -37,7 +37,7 @@ char** finding_similar(char*a, char *b)
 	char **d, **m;
 	int *arr;
 	arr = (int*)calloc(1, sizeof(int));
-	while (b[index] != '\0')
+	while (b[index] != '\0')//used to parse words of str2
 	{
 		if (b[index] == 32 && b[index + 1] == 32)
 			index++;
